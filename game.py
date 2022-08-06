@@ -70,7 +70,7 @@ player.rect.y = 650
 font = pygame.font.SysFont("Broadway", 30)
 font_end = pygame.font.SysFont("Broadway", 100)
 
-text_end = font_end.render("GAME OVER!", True, (0, 0, 0))
+text_end = font_end.render("You Won!", True, (0, 0, 0))
 
 while not done:
 
@@ -113,7 +113,7 @@ while not done:
     screen.blit(text, (0, 0))
 
     if score == 40:
-        screen.blit(text_end, (300,300))
+        screen.blit(text_end, (350,300))
 
     pygame.display.flip()
 
