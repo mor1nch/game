@@ -66,10 +66,17 @@ clock = pygame.time.Clock()
 score = 0
 player.rect.y = 650
 
+font = pygame.font.SysFont("Broadway", 30)
+font_end = pygame.font.SysFont("Broadway", 100)
+
+text_end = font_end.render("GAME OVER!", True, (0, 0, 0))
+
 while not done:
 
-    font = pygame.font.SysFont("Broadway", 30)
+
     text = font.render("Score: " + str(score), True, (0, 0, 0))
+
+
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -103,6 +110,10 @@ while not done:
     all_sprites_list.draw(screen)
 
     screen.blit(text, (0, 0))
+
+    if score == 40:
+        screen.blit(text_end, (300,300))
+
     pygame.display.flip()
 
     clock.tick(60)
